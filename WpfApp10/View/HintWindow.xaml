@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp10.View.HintWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp10.View"
+        xmlns:viewmodel="clr-namespace:WpfApp10.ViewModel"
+
+        d:DataContext="{d:DesignInstance Type=viewmodel:HintViewModel}"
+        mc:Ignorable="d"
+        Title="HintWindow" Height="580" Width="800">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Button
+                Height="35"
+                Margin="10,489,10,10"
+                Content="Закрыть окно"
+                FontSize="16"
+                Background="White"
+                Command="{Binding CloseWindowCommand}" Grid.Row="1"
+            />
+
+            <StackPanel Margin="20,20,20,67" Grid.Row="1">
+                <TextBlock Text="Калькулятор таблиц истинности поддерживает следующие логические операции:" FontWeight="Bold" FontSize="16" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Отрицание или инверсия (¬): инвертирует значение утверждения, т.е. если исходное утверждение истинно, то после применения отрицания оно станет ложным, и наоборот." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="И (∧): Возвращает истинное значение только в том случае, если оба утверждения истинны. Если хотя бы одно из утверждений ложно, то результат будет ложным." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Или (∨): Возвращает истинное значение, если хотя бы одно из утверждений истинно. Только в том случае, когда оба утверждения ложны, результат будет ложным." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Исключающее или (⊕): Возвращает истинное значение только в случае, когда одно из утверждений истинно, но не оба одновременно." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Стрелка Пирса (↑): Возвращает ложное значение только в случае, когда оба утверждения истинны, в остальных случаях результат будет истинным." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Штрих Шеффера (↓): Возвращает ложное значение только в случае, когда хотя бы одно из утверждений истинно, в остальных случаях результат будет ложным." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Эквивалентность (↔): Возвращает истинное значение только в случае, когда оба утверждения имеют одинаковые значения, т.е. либо оба истинны, либо оба ложны." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="Импликация (→): Возвращает ложное значение только в случае, когда первое утверждение истинно, а второе ложно. В остальных случаях результат будет истинным." Margin="0,15,0,0" FontSize="14" TextWrapping="WrapWithOverflow" />
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
